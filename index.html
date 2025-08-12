@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Registration</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+    .container {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        max-width: 400px;
+        width: 100%;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    input, select, textarea, button {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    button {
+        background: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #0056b3;
+    }
+    .thank-you {
+        display: none;
+        text-align: center;
+        color: green;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Registration</h2>
+    <form action="https://formspree.io/f/mabcdxyz" method="POST" id="regForm">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <select name="program" required>
+            <option value="">Select Program of Interest</option>
+            <option value="Undergraduate">Undergraduate</option>
+            <option value="Postgraduate">Postgraduate</option>
+            <option value="Diploma">Diploma</option>
+        </select>
+        <textarea name="message" placeholder="Additional Information"></textarea>
+        <button type="submit">Register</button>
+    </form>
+    <div class="thank-you" id="thankYou">
+        Thank you for your interest. You will be contacted within 24 hours.
+    </div>
+    
+</div>
+
+<script>
+    document.getElementById('regForm').addEventListener('submit', function() {
+        setTimeout(() => {
+            document.getElementById('regForm').style.display = 'none';
+            document.getElementById('thankYou').style.display = 'block';
+        }, 300); 
+    });
+    </script>
+    
+
+</body>
+</html>
